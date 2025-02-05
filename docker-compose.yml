@@ -15,15 +15,14 @@ services:
   backend:
     container_name: backend
     build:
-      context: 
-      dockerfile: ./dockerfile/dev/django/dockerfile
+      context: .
+      dockerfile: ./dockerfile/dev/django/Dockerfile
     volumes:
       - ./core:/usr/src/app
     working_dir: /usr/src/app
-    command: django-admin startproject core .  
     environment:
       - DEBUG=true
-    restart: always
+    # restart: always
     depends_on:
       - db
       
